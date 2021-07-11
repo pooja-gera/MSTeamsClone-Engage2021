@@ -1,7 +1,7 @@
 const socket = io('/')
 const videoGrid = document.getElementById('big-video-display')
 let main_screen_video = document.querySelector('.main_screen_video video');
-var myPeer = new Peer({ secure: true, host: 'videodesk-ennesimo.herokuapp.com', port: 443, path: '/' });
+var myPeer = new Peer(undefined,{path:'/',host: '/', port: 3030});
 let logoutBtn = document.querySelector('.logout');
 const myVideo = document.createElement('video')
 myVideo.muted = true
@@ -73,9 +73,9 @@ function addVideoStream(video, stream) {
 //---------------------------------------------------------------------------
 //MEETING CONTROLS 
 //---------------------------------------------------------------------------
-function disconnectCall() {
-}
-
+const disconnectBtn = document.getElementById('disconnect');
+disconnectBtn.addEventListener('click', () => {
+  window.location.href = "/"});
 
 //------------------------------------------
 //TURN MIC ON / OFF 
@@ -184,8 +184,9 @@ function updateActiveParticipants() {
   }
 }
 
-
-logoutBtn.addEventListener("click",async function(){
-  await axios.post("https://tclone2021-poojagera.herokuapp.com/logout");
-  window.location.href = "/";
-})
+if(logoutBtn){
+  logoutBtn.addEventListener("click",async function(){
+    await axios.post("https://tclone2021-poojagera.herokuapp.com/logout");
+    window.location.href = "/";
+  })
+}
