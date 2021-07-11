@@ -8,6 +8,7 @@ const io = require('socket.io')(server);
 const {ExpressPeerServer} = require('peer');
 const { login, signup, logout, protectRoute, isLoggedIn } = require('./controller/authController');
 const { getHome, getJoin, getRoom, getLogin, getSignup } = require('./controller/viewController');
+const { sendEmailInviteLink } = require('./controller/mail');
 const peerServer = ExpressPeerServer(server,{
     debug:true
 });
@@ -32,11 +33,15 @@ app.use(protectRoute)
 app.get("/join",getJoin)
 app.get("/:room",getRoom);
 app.post("/logout",logout);
+app.post("/mail",sendEmailInviteLink);
 
 io.on('connection',(socket)=>{
     socket.on('join-room',(roomId,userId)=>{
         socket.join(roomId);
         socket.to(roomId).emit('user-connected',userId);
+        socket.on('message', (message,name) => {
+            io.to(roomId).emit('createMessage',message,name)
+        })
         socket.on('disconnect', () => {
             socket.to(roomId).emit('user-disconnected', userId)
         })

@@ -10,8 +10,7 @@ function getJoin(req,res){
 }
 
 function getRoom(req,res){
-    
-    res.render('room',{roomId:req.param.room}); 
+    res.render('room',{roomId:req.param.room,name:req.name});
 }
 
 function getLogin(req,res){

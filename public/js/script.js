@@ -190,3 +190,20 @@ if(logoutBtn){
     window.location.href = "/";
   })
 }
+
+async function sendEmailInvite(){
+  let emails = prompt("Enter email addresses of the participants (separated by semicolons)");
+  console.log(emails)
+  emails = emails.split(";");
+  console.log(emails)
+  for(i in emails){
+    const data = {
+      email:emails[i],
+      body:"Join the meeting with link: "+window.location.href,
+      subject:"You have been invited to an ongoing meeting.",
+    };
+    console.log(data);
+    const response = await axios.post("http://localhost:3030/mail",data);
+    console.log(response);
+  }
+}

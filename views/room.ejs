@@ -15,6 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const ROOM_ID = "<%= roomId %>";
+        const userName = "<%= name %>";
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
     <title>MS Teams Clone</title>
@@ -30,7 +31,6 @@
             <i class="nav-icon ms-Icon ms-Icon--Video" aria-hidden="true"></i>
           </button>
         </div>
-        <div class="nav-item" id="date"></div>
       </div>
       <!--Vertical Nav Bar End-->
 
@@ -41,9 +41,9 @@
             <div class="title-text" id="title-text">Conference Room</div>
             <div class="team-badge">
               <div class="team-badge-icon">
-                <i class="ms-Icon ms-Icon--People"> </i>
+                <i class="ms-Icon ms-Icon--People"></i>
               </div>
-              <div class="team-badge-text" id="team-badge-text">Web Development Team</div>
+              <div class="team-badge-text" id="team-badge-text">Team Meeting</div>
             </div>
           </div>
           <div class="meeting-publisher-card">
@@ -54,37 +54,25 @@
               />
             </div>
             <div class="meeting-publisher-profile-text">
-              <div class="meeting-publisher-designation" id="meeting-publisher-designation">Meeting Publisher Designationr</div>
-              <div class="meeting-publisher-name" id="meeting-publisher-name">Meeting Publisher Name</div>
+              <div class="meeting-publisher-designation" id="meeting-publisher-designation">Logged In User</div>
+              <div class="meeting-publisher-name" id="meeting-publisher-name"><%= name %></div>
             </div>
           </div>
-          >
+          
           <a href="/"><button id="login-btn">Leave Meeting</button></a>
         
         </div>
 
         <div class="participant-tally">
-          <div class="participant-count">
-            <div class="tally-box active-participants-container">
-              <div class="active-participants-icon">
-                <i class="ms-Icon ms-Icon--Telemarketer"></i>
-              </div>
-              <div class="active-participants-text">On-Call Participants</div>
-              <div class="active-participants-count" id="active-participants-count">1</div>
-            </div>
-            <div class="tally-box absent-participants-container">
-              <div class="absent-participants-icon">
-                <i class="ms-Icon ms-Icon--BlockContact"></i>
-              </div>
-              <div class="absent-participants-text">Absent Participants</div>
-              <div class="absent-participants-count" id="absent-participants-count">0</div>
-            </div>
-          </div>
           <div class="tally-box add-user-container">
             <button class="add-user-icon" onclick="copyLink()">
               <i class="ms-Icon ms-Icon--Copy" style="margin-top: 2px"></i>
             </button>
-            <div class="add-user-text">Copy Invite Link</div>
+            <div class="add-user-text" style="margin-right:20px">Copy Invite Link</div>
+            <button class="add-user-icon" id="sendEmail" onclick="sendEmailInvite()">
+              <i class="ms-Icon ms-Icon--Mail" style="margin-top: 2px"></i>
+            </button>
+            <div class="add-user-text">Send Email Invite</div>
           </div>
         </div>
         <div class="videoDiv">
@@ -113,22 +101,17 @@
       <div class="chat-area">
         <div class="chat-header">
           <div class="chat-title">
-                      </div>
-          <div class="btns">
-          <button class="messages">
-            
-          </button>
-          <button class="participants">
-            
-          </button>
-        </div>
+                Chat Here      
+          </div>
         </div>
         <div class="texts-display-area"></div>
-        <div id="is-typing-area"></div>
-        <div class="send-message-area"></div>
-        <button id="send-message-btn"></button>
+         <div class="send-message-area">
+          <input type="text" class="send-msg">
+          <button id="send-message-btn">Send</button>
+        </div>
       </div>
     </div>
   </body>
   <script src="/js/script.js" defer></script>
+  <script src="/js/chat.js" defer></script>
 </html>
