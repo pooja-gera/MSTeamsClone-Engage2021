@@ -1,7 +1,7 @@
 const socket = io('/')
 const videoGrid = document.getElementById('big-video-display')
 let main_screen_video = document.querySelector('.main_screen_video video');
-var myPeer = new Peer(undefined,{ secure: true, host: 'localhost', port: 3030, path: '/' });
+var myPeer = new Peer({ secure: true, host: 'videodesk-ennesimo.herokuapp.com', port: 443, path: '/' });
 let logoutBtn = document.querySelector('.logout');
 const myVideo = document.createElement('video')
 myVideo.muted = true
@@ -186,6 +186,6 @@ function updateActiveParticipants() {
 
 
 logoutBtn.addEventListener("click",async function(){
-  await axios.post("http://localhost:3030/logout");
+  await axios.post("https://tclone2021-poojagera.herokuapp.com/logout");
   window.location.href = "/";
 })

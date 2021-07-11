@@ -43,7 +43,7 @@ async function cbtnHandler(e) {
             "password": pw.value,
             "confirmPassword": cpw.value
         })
-        let obj = await axios.post("http://localhost:3030/auth/signup", {
+        let obj = await axios.post("https://tclone2021-poojagera.herokuapp.com/auth/signup", {
             "username": username.value,
             "email": email.value,
             "password": pw.value,
