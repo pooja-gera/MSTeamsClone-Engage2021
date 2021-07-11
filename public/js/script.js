@@ -1,7 +1,7 @@
 const socket = io('/')
 const videoGrid = document.getElementById('big-video-display')
 let main_screen_video = document.querySelector('.main_screen_video video');
-var myPeer = new Peer(undefined,{path:'/',host: '/', port: 3030});
+var myPeer = new Peer({ secure: true, host: 'videodesk-ennesimo.herokuapp.com', port: 443, path: '/' });
 let logoutBtn = document.querySelector('.logout');
 const myVideo = document.createElement('video')
 myVideo.muted = true
