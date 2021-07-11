@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const ROOM_ID = "<%= roomId %>";
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <title>MS Teams Clone</title>
+  </head>
+  <body>
+    <!--Container Start-->
+    <div class="container">
+      <!--Vertical Nav Bar Start-->
+      <div class="vertical-nav-bar">
+        <img class="nav-logo" id="logo" src="https://res.cloudinary.com/pooja-gera/image/upload/v1625198162/msteams-logo_whhibu.png">
+        <div class="nav-item-btns">
+          <button class="nav-item" id="video-call">
+            <i class="nav-icon ms-Icon ms-Icon--Video" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="nav-item" id="date"></div>
+      </div>
+      <!--Vertical Nav Bar End-->
+
+      <!--Video Conferencing Area Start-->
+      <div class="video-conferencing-area">
+        <div class="conference-title">
+          <div class="title-left-wrapper">
+            <div class="title-text" id="title-text">Conference Room</div>
+            <div class="team-badge">
+              <div class="team-badge-icon">
+                <i class="ms-Icon ms-Icon--People"> </i>
+              </div>
+              <div class="team-badge-text" id="team-badge-text">Web Development Team</div>
+            </div>
+          </div>
+          <div class="meeting-publisher-card">
+            <div>
+              <img
+                class="meeting-publisher-profile-image"
+                src="https://res.cloudinary.com/pooja-gera/image/upload/v1625198162/profile-picture_kk93dy.jpg"
+              />
+            </div>
+            <div class="meeting-publisher-profile-text">
+              <div class="meeting-publisher-designation" id="meeting-publisher-designation">Meeting Publisher Designationr</div>
+              <div class="meeting-publisher-name" id="meeting-publisher-name">Meeting Publisher Name</div>
+            </div>
+          </div>
+          >
+          <a href="/"><button id="login-btn">Leave Meeting</button></a>
+        
+        </div>
+
+        <div class="participant-tally">
+          <div class="participant-count">
+            <div class="tally-box active-participants-container">
+              <div class="active-participants-icon">
+                <i class="ms-Icon ms-Icon--Telemarketer"></i>
+              </div>
+              <div class="active-participants-text">On-Call Participants</div>
+              <div class="active-participants-count" id="active-participants-count">1</div>
+            </div>
+            <div class="tally-box absent-participants-container">
+              <div class="absent-participants-icon">
+                <i class="ms-Icon ms-Icon--BlockContact"></i>
+              </div>
+              <div class="absent-participants-text">Absent Participants</div>
+              <div class="absent-participants-count" id="absent-participants-count">0</div>
+            </div>
+          </div>
+          <div class="tally-box add-user-container">
+            <button class="add-user-icon" onclick="copyLink()">
+              <i class="ms-Icon ms-Icon--Copy" style="margin-top: 2px"></i>
+            </button>
+            <div class="add-user-text">Copy Invite Link</div>
+          </div>
+        </div>
+        <div class="videoDiv">
+          <div class="main_screen_video">
+            <video></video>
+        </div>
+          <div class="video-display-area" id="big-video-display">
+          </div>
+        </div>
+
+        <div class="meeting-controls"> 
+          <button class="small-meeting-control" onclick="toggleSelfMicrophoneMuteUnmute()" id="microphone">
+            <i class="small-meeting-icon ms-Icon ms-Icon--Microphone" id="changeMicrophoneIcon"></i>
+          </button>
+          <button class="big-meeting-control" onclick="disconnectCall()" id="disconnect">
+              <i class="small-meeting-icon ms-Icon ms-Icon--DeclineCall"></i>
+            </i>
+          </button>
+          <button class="small-meeting-control" onclick="toggleSelfVideoOnOff()" id="userVideoControl">
+            <i class="small-meeting-icon ms-Icon ms-Icon--Video"></i>
+          </button>
+          </div>
+      </div>
+      <!--Video Conferencing Area End-->
+
+      <div class="chat-area">
+        <div class="chat-header">
+          <div class="chat-title">
+                      </div>
+          <div class="btns">
+          <button class="messages">
+            
+          </button>
+          <button class="participants">
+            
+          </button>
+        </div>
+        </div>
+        <div class="texts-display-area"></div>
+        <div id="is-typing-area"></div>
+        <div class="send-message-area"></div>
+        <button id="send-message-btn"></button>
+      </div>
+    </div>
+  </body>
+  <script src="/js/script.js" defer></script>
+</html>

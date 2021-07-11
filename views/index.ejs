@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/landingpagestyle.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="container">
+       
+       <% if(check == false) { %>
+        <div class="nav-bar">
+          <div id="logo-box">
+            <img
+              src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Logo_Box_ceb0sc.png"
+              alt="ms-teams-logo"
+              id="ms-teams-logo"
+            />
+          </div>
+          <div class="login-signup-btns">
+            <a href="/login"
+              ><button id="login-btn">Log In To Get Started</button>
+            </a>
+            <a href="/signup">
+              <button id="signup-btn">Sign Up</button>
+            </a>
+          </div>
+        </div>
+        
+      <% } else { %>
+        <!--<h1 id="logged-in-user">Welcome <%- name %></h1>-->
+        <div class="nav-bar">
+          <div id="logo-box">
+            <img
+              src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Logo_Box_ceb0sc.png"
+              alt="ms-teams-logo"
+              id="ms-teams-logo"
+            />
+          </div>
+          <div class="login-signup-btns">
+            <a href="/login"
+              ><button id="login-btn" class="logout">Log Out</button>
+            </a>  
+          </div>
+        </div>  
+              
+        <% } %> 
+      <div id="title">
+        <div class="main-heading">Remote Connection With Your Team</div>
+        <div class="main-tagline" id="add-google-text">
+          Work Together | Stay Together | Grow Together
+        </div>
+      </div>
+      <div id="cta-btns">
+       <% if(check == true){ %>
+        <a href="/join"><button id="start-meeting">Start A Meeting</button></a>
+        <% } %>
+        <button id="watch-demo">Watch The Demo</button>
+      </div> 
+       
+      <div id="outer-visual-aesthetic-area"></div>
+      <div id="inner-visual-aesthetic-area">
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323269/engage2021-msteamsclone-poojagera/Base_Rectangle_novted.png"
+          alt="base-rectangle"
+          id="base-rectangle"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323269/engage2021-msteamsclone-poojagera/Bug_Review_Box_mj9uz0.png"
+          alt="bug-review-box"
+          id="bug-review-box"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323269/engage2021-msteamsclone-poojagera/Circular_Image_Bottom_Left_awxokv.png"
+          alt="circular-image-bottom-left"
+          id="circular-image-bottom-left"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323269/engage2021-msteamsclone-poojagera/Circular_Image_Top_Right_txbzls.png"
+          alt="circular-image-top-right"
+          id="circular-image-top-right"
+        />
+        <!-- <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323269/engage2021-msteamsclone-poojagera/Corner_Ellipses_Bottom_Left_b1mzrq.png"
+          alt="corner-ellipses-bottom-left"
+          id="corner-ellipses-bottom-left"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323269/engage2021-msteamsclone-poojagera/Corner_Ellipses_Top_Right_l8iidf.png"
+          alt="corner-ellipses-top-right"
+          id="corner-ellipses-top-right"
+        />-->
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Incoming_Call_Box_m4fhce.png"
+          alt="incoming-call-box"
+          id="incoming-call-box"
+        />
+        <!--<img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323269/engage2021-msteamsclone-poojagera/Left_Small_Triangle_gz1iry.png"
+          alt="left-small-triangle"
+          id="left-small-triangle"
+        />-->
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Meeting_Poll_Box_mt7yee.png"
+          alt="meeting-poll-box"
+          id="meeting-poll-box"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323269/engage2021-msteamsclone-poojagera/Message_Box_1_lqxvfq.png"
+          alt="message-box-1"
+          id="message-box-1"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Message_Box_2_nd7lpm.png"
+          alt="message-box-2"
+          id="message-box-2"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Message_Box_3_nrnymi.png"
+          alt="message-box-3"
+          id="message-box-3"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Message_Box_4_cmembv.png"
+          alt="message-box-4"
+          id="message-box-4"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323271/engage2021-msteamsclone-poojagera/Ongoing_Video_Call_s97kl7.png"
+          alt="ongoing-video-call"
+          id="ongoing-video-call"
+        />
+        <!--<img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Right_Small_Triangle_l562kk.png"
+          alt="right-small-triangle"
+          id="right-small-triangle"
+        />-->
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Scrum_Meeting_Box_wf8bab.png"
+          alt="scrum-meeting-box"
+          id="scrum-meeting-box"
+        />
+        <img
+          src="https://res.cloudinary.com/pooja-gera/image/upload/v1625323270/engage2021-msteamsclone-poojagera/Write_Message_Box_pfqwdn.png"
+          alt="write-message-box"
+          id="write-message-box"
+        />
+      </div>
+    </div>
+  </body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+  <script src="/js/script.js"></script>
+</html>

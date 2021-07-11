@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="confirmpage">
+            <div class="cwrap">
+                <div class="heading">Confirm Your Details</div>
+                <div class="cname">
+                    <div class="head">Name</div>
+                    <div class="value"></div>
+                </div>
+                <div class="cemail">
+                    <div class="head">Email</div>
+                    <div class="value"></div>
+                </div>
+                <div class="btns">
+                    <div class="confirm">Confirm</div>
+                    <div class="edit">Edit</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <img src="https://res.cloudinary.com/pooja-gera/image/upload/v1625945359/engage2021-msteamsclone-poojagera/Login_Register_BGImage_1_yyg61j.png" alt="Login/Register Backdrop">
+           
+            <div class="details">
+                <div class="option">
+                    <div class="loginbtn">LogIn</div>
+                    <div class="registerbtn">SignUp</div>
+                </div>
+                <div class="heading">
+                    <h1>SignUp</h1>
+                    <h3>Create your account</h3>
+                </div>
+                <form action="" id="signupForm">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="" id="email">
+
+                    <label for="pw">Password</label>
+                    <input type="password" name="" id="pw">
+
+                    <label for="cpw">Confirm Password</label>
+                    <input type="password" name="" id="cpw">
+
+                    <div class="message"></div>
+                    <div class="submitbtn">SUBMIT</div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="/js/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+/***************************
+DEFAULT VALUES AND VARIABLES
+***************************/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* TEAMS NEUTRAL COLORS*/
+
+  --default-foreground: #242424; /*primary text and icons*/
+  --foreground-1: #424242; /*secondary text and icons*/
+  --foreground-2: #616161; /*tertiarty text and icons*/
+  --default-foreground-disabled: #c7c7c7; /*disabled text and icons*/
+  --default-border: #e0e0e0; /*border colors*/
+  --background-2: #f5f5f5; /*input, dropdown or dialog over a white background*/
+  --default-background: #ffffff; /*chat bubble, menu, input, dropdown, popup and card*/
+
+  /*TEAMS BRAND COLORS*/
+  --brand-background-2: #3d3e66; /*meeting live header*/
+  --brand-foreground-1: #494b83; /*primarily inline text link color*/
+  --brand-foreground-background: #6264a7; /*primary actions and buttons*/
+  --brand-border-1: #b2b5ff; /*brand border colors*/
+  --brand-background-1: #e9eaf6; /*chat bubbles, active brand border*/
+
+  /*TEAMS SECONDARY COLORS*/
+  --red-foreground: #c4314b; /*important and error messages*/
+  --yellow-foreground-4: #a16114; /*warning and away messages*/
+  --green-foreground: #237b4b; /*success and available messages*/
+  --green-background-2: #e7fbd1; /*success banner background*/
+  --yellow-background-1: #fbf6d9; /*warning banner and highlighted message background*/
+  --red-background-1: #fcf4f6; /*error banner and chat message background*/
+}
+
+/**************
+  MAIN CONTAINER
+  **************/
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: var(--default-background);
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  font-family: "Segoe UI", "Frutiger", "Frutiger Linotype", "Dejavu Sans",
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--default-background);
+}
+
+/****************
+  VERTICAL NAV-BAR
+  ****************/
+
+.vertical-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: var(--default-background);
+  height: 100vh;
+  width: 5vw;
+  border-right: 1px solid var(--default-foreground);
+}
+
+button {
+  background-color: var(--default-background);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--brand-foreground-background);
+}
+
+.nav-item-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.nav-item {
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+.nav-logo {
+  height: 64px;
+}
+
+.nav-logo:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-30deg);
+  transition: 0.5s;
+}
+
+.nav-icon {
+  margin-top: 3px;
+  font-size: 24px;
+  color: var(--brand-foreground-1);
+}
+
+.nav-icon:hover {
+  color: var(--default-background);
+}
+
+/**********************
+  VIDEO CONFERENCING AREA
+  **********************/
+
+.video-conferencing-area {
+  height: 100vh;
+  width: 75vw;
+  border-right: 1px solid var(--default-foreground);
+}
+
+.conference-title {
+  height: 15vh;
+  border-bottom: 1px solid var(--default-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.title-left-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.title-text {
+  font-size: 32px;
+  color: var(--default-foreground);
+  font-weight: bolder;
+  margin-left: 10px;
+}
+.team-badge {
+  background-color: var(--yellow-background-1);
+  color: var(--yellow-foreground-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-top: 6px;
+}
+.team-badge-icon {
+  margin: 4px 4px 4px 8px;
+  font-size: 12px;
+}
+
+.team-badge-text {
+  margin: 4px 8px 4px 0px;
+  font-size: 12px;
+}
+.meeting-publisher-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.meeting-publisher-profile-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+.meeting-publisher-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.meeting-publisher-designation {
+  font-size: 12px;
+}
+
+.participant-tally {
+  height: 6vh;
+  border-bottom: 1px solid var(--default-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.participant-count {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 15px;
+}
+
+.tally-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-right: 15px;
+}
+.active-participants-icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.active-participants-count {
+  font-size: 16px;
+  background-color: var(--green-background-2);
+  color: var(--green-foreground);
+  padding: 4px;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+}
+.active-participants-text {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.absent-participants-icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.absent-participants-text {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.absent-participants-count {
+  font-size: 16px;
+  background-color: var(--red-background-1);
+  color: var(--red-foreground);
+  padding: 4px;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+}
+.add-user-icon {
+  margin-right: 10px;
+  font-size: 16px;
+  background-color: var(--brand-background-2);
+  color: var(--background-2);
+  padding: 4px;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+}
+.add-user-text {
+  font-size: 16px;
+}
+
+.video-display-area {
+  height: 70vh;
+}
+
+#big-video-display {
+  position: absolute;
+    right: 10px;
+    height: 95%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:#6264a7a7;
+    border-radius: 30px;
+    border: 2px solid grey;
+    backdrop-filter: blur(15px);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+#big-video-display > video {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  height: 300px;
+  width: 400px;
+  border: 4px solid var(--brand-background-2);
+  border-radius:20px;
+}
+
+.main_screen_video,
+.main_screen_video video{
+    width: 100%;
+    height: 100%;
+}
+.videoDiv{
+  flex-grow: 1;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 70%;
+}
+
+.meeting-controls {
+  border-top: 1px solid var(--default-foreground);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.sticky {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.small-meeting-control {
+  border-radius: 50%;
+  background-color: var(--default-foreground);
+  color: var(--background-2);
+  height: 36px;
+  width: 36px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 10px 0 10px;
+}
+
+.small-meeting-icon {
+  margin-top: 4px;
+}
+
+.big-meeting-control {
+  border-radius: 20px;
+  color: var(--background-2);
+  background-color: var(--red-foreground);
+  height: 48px;
+  width: 48px;
+  font-size: 32px;
+  text-align: center;
+  margin: 5px 10px 0 10px;
+}
+
+.big-meeting-control:hover {
+  color: var(--background-2);
+  background-color: var(--red-foreground);
+}
+
+
+/**********
+  CHAT AREA
+  **********/
+
+.chat-area {
+  height: 100vh;
+  width: 20vw;
+}
+.chat-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-title {
+}
+.messages {
+}
+.participants {
+}
+.texts-display-area {
+}
+.is-typing-area {
+}
+.send-message-area {
+}
+.send-message-btn {
+}
+
+:root {
+  --dark-purple-fill: #6264a7;
+  --light-purple-fill: #e9eaf6;
+  --light-text: #f5f5f5;
+  --dark-text: #616161;
+  --standard-black: #000000;
+}
+
+#login-btn {
+  background-color: var(--dark-purple-fill);
+  color: var(--light-text);
+  height: 43.1686px;
+  width: 180px;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17.6px;
+  line-height: 23.2px;
+  text-align: center;
+  border-radius: 10px;
+  margin-right: 20px;
+}
