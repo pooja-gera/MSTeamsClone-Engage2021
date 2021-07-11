@@ -18,7 +18,7 @@ async function submitbtnHandler(e){
         e.preventDefault(); // prevent page refresh
         if(email.value && pw.value){
             console.log(email.value, pw.value);
-            let obj = await axios.post( "http://localhost:3030/auth/login" , {email:email.value , password:pw.value});
+            let obj = await axios.post( "https://tclone2021-poojagera.herokuapp.com/auth/login" , {email:email.value , password:pw.value});
             
             console.log(obj);
             if(obj.data.data){

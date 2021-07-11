@@ -203,7 +203,7 @@ async function sendEmailInvite(){
       subject:"You have been invited to an ongoing meeting.",
     };
     console.log(data);
-    const response = await axios.post("http://localhost:3030/mail",data);
+    const response = await axios.post("https://tclone2021-poojagera.herokuapp.com/mail",data);
     console.log(response);
   }
 }
