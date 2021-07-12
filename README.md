@@ -1,112 +1,228 @@
 <!-- Add banner here -->
 ![Project Banner](https://res.cloudinary.com/pooja-gera/image/upload/v1625959187/engage2021-readme_assets/Banner_-_MS_Teams_Clone_nq1wde.png)
 # MS Teams Clone By Pooja Gera
+
 Microsoft Teams Clone is an attempt to bring the features to life of the robust and popular video conferencing application - Microsoft Teams. This project was built as a part of the Microsoft Engage Program 2021 where mentees had to build a video calling application with certain functionalities while incorporating the agile methodology. 
 
 <b>Motivation:</b> While the world has crumbled down because of the ongoing pandemic, the only thing that is binding us together right now is being connected through social media platforms and get a chance to talk to our friends, family and co-workers through video conferencing platforms such as Microsoft Teams. 
 
-<b>Solved Problem:</b> This clone application aims to offer a quick and easy way to 
+<b>Solved Problem:</b> This clone application aims to offer a quick and easy way to connect with your friends, family and teammates by utilising the power of javascript and WebRTC.
 
-![GitHub issues](https://img.shields.io/github/issues/pooja-gera/Engage2021-MSTeamsClone?style=flat-square) ![GitHub Forks](https://img.shields.io/github/forks/pooja-gera/Engage2021-MSTeamsClone?style=flat-square) ![GitHub Stars](https://img.shields.io/github/stars/pooja-gera/Engage2021-MSTeamsClone?style=flat-square) ![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fpoojagera0_0)
+<b>Learnings:</b> Through the Microsoft Engage Mentorship Program 2021 under the able guidance of my mentors - Akash Goel sir and Vaibhav Gupta sir I was able to go from a person who just knew how to make static web pages to a person who can build and deploy a full stack web applications.
+
+<img src="https://image.flaticon.com/icons/png/512/1384/1384060.png" alt="youtube-icon" width="50px"> 
+
+[Watch the Demo on YouTube (To be Added)](#)
 
 # Table of contents
 
-- [Demo-Preview](#demo-preview)
-- [Table of contents](#table-of-contents)
+- [Features of the Application (With Demo)](#features-of-the-application-with-demo)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Development](#development)
-- [Contribute](#contribute)
-    - [Sponsor](#sponsor)
-    - [Adding new features or fixing bugs](#adding-new-features-or-fixing-bugs)
-- [License](#license)
-- [Footer](#footer)
+- [Tech Stack Selection](#tech-stack-selection)
+- [Usage of Agile Methodology](#usage-of-agile-methodology)
+- [Challenges Faced](#challenges-faced)
+- [Future Scope](#future-scope)
+- [Bug Log](#bug-log)
+- [Try The Web Application](#try-the-web-application)
+- [Support and Contact](#support-and-contact)
 
-# Installation
+# Features of the Application (With Demo)
+
+1. Login 
+![Login](https://res.cloudinary.com/pooja-gera/image/upload/v1626078908/engage2021-readme_assets/MSTeamsClone_Engage2021_LoginDemoGIF_bzb0jk.gif)
+2. Signup 
+3. Confirm password check 
+4. Logout
+5. Unique room IDs for every new meeting
+6. Copy invitation link 
+7. Send email invites with the click of one button 
+8. Send email invites to multiple individuals together 
+9. Display of logged-in user's name in the meeting room header
+10. One on one video calling 
+11. Group video calling 
+12. Participant video calling sidebar 
+13. Click a participant's video to pin it to the large video area
+14. Microphone mute/unmute 
+15. Video on/off 
+16. Disconnect call 
+17. In-meeting chat
+18. Redirect to YouTube for watching the demo video 
+19. The start meeting feature displays only when the user is logged in
+
 [(Back to top)](#table-of-contents)
 
-<!-- *You might have noticed the **Back to top** button(if not, please notice, it's right there!). This is a good idea because it makes your README **easy to navigate.*** 
+# Installation 
+To use this project, follow the steps below:
 
-The first one should be how to install(how to generally use your project or set-up for editing in their machine).
+Initialise git on your terminal.
 
-This should give the users a concrete idea with instructions on how they can use your project repo with all the steps.
+```bash
+git init
+```
+Clone this repository.
 
-Following this steps, **they should be able to run this in their device.**
+```bash
+git clone https://github.com/pooja-gera/MSTeamsClone-Engage2021
+``` 
 
-A method I use is after completing the README, I go through the instructions from scratch and check if it is working. -->
+Change the directory. 
 
-<!-- Here is a sample instruction:
+```bash
+cd MSTeamsClone-Engage2021
+```
 
-To use this project, first clone the repo on your device using the command below:
+Open the repository with your code editor. 
+In case you do not have a code editor, it is recommended you use Visual Studio Code. 
 
-```git init```
+```bash
+code .
+```
 
-```git clone https://github.com/navendu-pottekkat/nsfw-filter.git``` -->
+Open the terminal in Visual code by pressing Ctrl+J (Windows) and run the following commands:
 
-# Usage
+```bash
+npm i
+```
+After the required packages are installed, run the following command: 
+
+```bash
+npm start
+```
+
+Please note: To run the machine on localhost:3030 you will have to edit the following lines of code: 
+
+```js
+//Line 21 public->js->login.js
+let obj = await axios.post( "https://tclone2021-poojagera.herokuapp.com/auth/login" , {email:email.value , password:pw.value});
+//Change the above piece of code to:
+let obj = await axios.post( "http://localhost:3030/auth/login" , {email:email.value , password:pw.value});
+
+
+//Line 46 public->js->signup.js
+  let obj = await axios.post("https://tclone2021-poojagera.herokuapp.com/auth/signup", {
+            "username": username.value,
+            "email": email.value,
+            "password": pw.value,
+            "confirmPassword": cpw.value
+        });
+//Change the above piece of code to:
+    let obj = await axios.post("http://localhost:3030/auth/signup", {
+            "username": username.value,
+            "email": email.value,
+            "password": pw.value,
+            "confirmPassword": cpw.value
+        });
+
+//Line 189 public->js->script.js
+await axios.post("https://tclone2021-poojagera.herokuapp.com/logout");
+//Change the above piece of code to: 
+await axios.post("https://localhost:3030/logout");
+
+//Line 206 public->js->script.js
+const response = await axios.post("https://tclone2021-poojagera.herokuapp.com/mail",data);
+//Change the above piece of code to: 
+const response = await axios.post("http://localhost:3030/mail",data);
+```
+
+# Tech Stack Selection 
+
+In spite of all the smart devices that exist today in the world, one thing that is common is - web and internet browsers. I selected my application to be a <b>web application</b> so that a large number of users are able to use it with ease and connect together. 
+
+For frontend development, I have used <b>HTML, CSS, Javascript and EJS</b>. For backend development, I have used <b>NodeJS, Express Server and MongoDB</b>. 
+
+The design of this application is in compliance with the <b>Microsoft UI Kit</b>. Fluent UI and the brand color pallette of Microsoft Teams has been utilised to create this application. The primary font of the application is Segoe UI which is the same as that of the original Microsoft teams Appplication.
+
+* <b>Choosing A Video Call SDK 
+![Jitsi vs WebRTC](https://res.cloudinary.com/pooja-gera/image/upload/v1626081180/engage2021-readme_assets/MSTeamsClone_VideoCallSDKComparison_jeuwsu.png)
+
+* Choosing A Hosting Platform</b> 
+![Firebase vs Heroku](https://res.cloudinary.com/pooja-gera/image/upload/v1626081222/engage2021-readme_assets/MSTeamsClone_HostingPlatformComparison_qe4bhs.png)
+
 [(Back to top)](#table-of-contents)
 
-<!-- This is optional and it is used to give the user info on how to use the project after installation. This could be added in the Installation section also. -->
+# Usage of Agile Methodology 
 
-# Development
+After taking the session on Agile 101, I understood how modern software is developed and how agile methodologies are applied in Microsoft to deliver great products and this is when I understood the importance of incorporating Agile Methodology into my project. 
+
+As this wasn't a team project, I could not assign different tasks to different people and form a sprint out of it. Therefore I divided myself into five different people - one who will research, one who will design, one who will develop the frontend of the web application, one who will develop the backend of the web application and finally the one who will fix bugs. This division helped me to get into a zone and focus on a particular functionality whenever I was working on the project. 
+
+This disciplined process upon MS Teams Clone development gave me the following benefits: 
+- It made my development process predicatable and more efficient. 
+- It made my development process easy to handle, flexible and allowed more room to adjust new functionalities. 
+
+I used Trello as my primary application for designing the board for the development process of MS Teams Clone Web Application. 
+
+* <b>Using Trello for managing sprints</b>
+![Trello Sprint Board](https://res.cloudinary.com/pooja-gera/image/upload/v1626083386/engage2021-readme_assets/MSTeamsClone_SprintBoardTrello_xkqjmd.png)
+<br>
+I divided my entire development process into <b>4 sprints (each having the duration of 1 week)</b> as shown in the images below. I gave due importance to the bug review and fixing part of the development process as it is crucial to offer whatever features you are offering are offered with utmost perfection. 
+<br>
+![Sprint 1](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_Sprint1_dkajyp.png)
+<br>
+![Sprint 2](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_Sprint2_plyvkj.png)
+<br>
+![Sprint 3](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_Sprint3_alr2mm.png)
+<br>
+![Sprint 4](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_Sprint4_k1oin4.png)
+<br>
+* <b>Adjusting AceHacker/Mentor Assigned Assignments</b>
+To cater to the assignments provided by the AceHacker platform and also undertake the tasks and suggestions provided by the mentors, I made a separate card where I put these assignments and made sure I was completing them alongside my ongoing sprints. 
+<br>
+![Assignments](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_SprintAssignments_upjwsz.png)
+
+
 [(Back to top)](#table-of-contents)
 
-<!-- This is the place where you give instructions to developers on how to modify the code.
+# Challenges Faced
 
-You could give **instructions in depth** of **how the code works** and how everything is put together.
+"If you are not facing challenges while developing an application, you are not considering every possible case for a better experience of your users."
 
-You could also give specific instructions to how they can setup their development environment.
+During the development process I faced the following challenges: 
+1. Understanding the working of the backend side of my application as I had never worked with web backend before. However, thanks to online communities, stackoverflow, my mentors and friends I was able to find resources which helped me in creating this web application. 
+2. Preparing a feature list. In the beginning I wanted to build an app like no other and incorporate many features. But in the interest of time, I had to narrow down the features to the basic functionalities that are available in a video conferencing web application. 
+3. Hosting. Initially I was using Firebase to host my application and I realised it later after reading articles online that Firebase will not be able to handle the server code I had written. Therefore I switched to Heroku. The deployment was easy and I did learn a valuable lesson that even if it is the tiniest part of your application, you need to research well and make sure the service you are choosing caters to all the needs of your software.
+4. Implementing the Adapt feature. I was able to implement the in-meeting chat but since I had less time I wasn't able to implement the before and after display of chats. 
 
-Ideally, you should keep the README simple. If you need to add more complex explanations, use a wiki. Check out [this wiki](https://github.com/navendu-pottekkat/nsfw-filter/wiki) for inspiration. -->
+All these challenges were less of challenges and more of lessons, lessons to help me have an even better development process in the future so that I can incorporate the customers' requests and requirements easily and efficiently. 
 
-# Contribute
 [(Back to top)](#table-of-contents)
 
-<!-- This is where you can let people know how they can **contribute** to your project. Some of the ways are given below.
+# Future Scope
+The web application can be improved by adding the following features. 
+1. Adding responsiveness and making it compatible with devices having smaller screens. 
+2. Automatic minutes of meeting 
+3. 3 variations of the web application:
+   - Classroom
+   - Professional
+   - Friends 
+4. Live captioning 
+5. Live translation
+6. Individual user video quality adjustment (like in YouTube)
+7. User registration through social media handles 
+10. Before and after meeting chat 
+12. Screen Sharing 
+13. Noise Cancellation
 
-Also this shows how you can add subsections within a section. -->
-
-### Sponsor
 [(Back to top)](#table-of-contents)
 
-<!-- Your project is gaining traction and it is being used by thousands of people(***with this README there will be even more***). Now it would be a good time to look for people or organisations to sponsor your project. This could be because you are not generating any revenue from your project and you require money for keeping the project alive.
+# Bug Log
 
-You could add how people can sponsor your project in this section. Add your patreon or GitHub sponsor link here for easy access.
+Following are the known bugs of the web application: 
+1. The web application will work on mobile devices but isn't made responsive to cater to different sizes. 
+2. In the meeting room your video will be displayed at two places - one in the large display area and one in the sidebar where videos of all participants are displayed. 
+3. After the call disconnects, the user gets redirected to the home page, there could have been a page where the user gets to know that they have left the meeting. 
+4. The UI of the chat can be improved and made more in accordance with the original MS Teams application. 
 
-A good idea is to also display the sponsors with their organisation logos or badges to show them your love!(*Someday I will get a sponsor and I can show my love*) -->
-
-### Adding new features or fixing bugs
 [(Back to top)](#table-of-contents)
 
-<!-- This is to give people an idea how they can raise issues or feature requests in your projects. 
+# Try The Web Application 
 
-You could also give guidelines for submitting and issue or a pull request to your project.
+Try the MS Teams Clone Web App [here](https://tclone2021-poojagera.herokuapp.com/).
+Please give it a little time to load.
 
-Personally and by standard, you should use a [issue template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/ISSUE_TEMPLATE.md) and a [pull request template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/PULL_REQ_TEMPLATE.md)(click for examples) so that when a user opens a new issue they could easily format it as per your project guidelines.
-
-You could also add contact details for people to get in touch with you regarding your project. -->
-
-# License
 [(Back to top)](#table-of-contents)
 
-<!-- Adding the license to README is a good practice so that people can easily refer to it.
-
-Make sure you have added a LICENSE file in your project folder. **Shortcut:** Click add new file in your root of your repo in GitHub > Set file name to LICENSE > GitHub shows LICENSE templates > Choose the one that best suits your project!
-
-I personally add the name of the license and provide a link to it like below. -->
-
-[GNU General Public License version 3](https://opensource.org/licenses/GPL-3.0)
-
-# Footer
+# Support and Contact 
 [(Back to top)](#table-of-contents)
 
-<!-- Let's also add a footer because I love footers and also you **can** use this to convey important info.
-
-Let's make it an image because by now you have realised that multimedia in images == cool(*please notice the subtle programming joke). -->
-
-Leave a star in GitHub, give a clap in Medium and share this guide if you found this helpful.
-
-<!-- Add the footer here -->
-
-<!-- ![Footer](https://github.com/navendu-pottekkat/awesome-readme/blob/master/fooooooter.png) -->
-{"mode":"full","isActive":false}
+![GitHub issues](https://img.shields.io/github/issues/pooja-gera/Engage2021-MSTeamsClone?style=flat-square) ![GitHub Forks](https://img.shields.io/github/forks/pooja-gera/Engage2021-MSTeamsClone?style=flat-square) ![GitHub Stars](https://img.shields.io/github/stars/pooja-gera/Engage2021-MSTeamsClone?style=flat-square) ![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fpoojagera0_0)
