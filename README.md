@@ -29,9 +29,6 @@ Microsoft Teams Clone is an attempt to bring the features to life of the robust 
 # Features of the Application (With Demo)
 
 1. Login 
-
-    ![Login](https://res.cloudinary.com/pooja-gera/image/upload/v1626078908/engage2021-readme_assets/MSTeamsClone_Engage2021_LoginDemoGIF_bzb0jk.gif)
-    
 2. Signup 
 3. Confirm password check 
 4. Logout
@@ -238,6 +235,9 @@ Please give it a little time to load.
 [(Back to top)](#table-of-contents)
 
 # Support and Contact 
+
+Email To: poojagera.67@gmail.com
+
 [(Back to top)](#table-of-contents)
 
 ![GitHub issues](https://img.shields.io/github/issues/pooja-gera/Engage2021-MSTeamsClone?style=flat-square) ![GitHub Forks](https://img.shields.io/github/forks/pooja-gera/Engage2021-MSTeamsClone?style=flat-square) ![GitHub Stars](https://img.shields.io/github/stars/pooja-gera/Engage2021-MSTeamsClone?style=flat-square) ![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fpoojagera0_0)
