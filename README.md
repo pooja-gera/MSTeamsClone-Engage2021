@@ -29,7 +29,9 @@ Microsoft Teams Clone is an attempt to bring the features to life of the robust 
 # Features of the Application (With Demo)
 
 1. Login 
-![Login](https://res.cloudinary.com/pooja-gera/image/upload/v1626078908/engage2021-readme_assets/MSTeamsClone_Engage2021_LoginDemoGIF_bzb0jk.gif)
+
+    ![Login](https://res.cloudinary.com/pooja-gera/image/upload/v1626078908/engage2021-readme_assets/MSTeamsClone_Engage2021_LoginDemoGIF_bzb0jk.gif)
+    
 2. Signup 
 3. Confirm password check 
 4. Logout
@@ -133,10 +135,12 @@ For frontend development, I have used <b>HTML, CSS, Javascript and EJS</b>. For 
 The design of this application is in compliance with the <b>Microsoft UI Kit</b>. Fluent UI and the brand color pallette of Microsoft Teams has been utilised to create this application. The primary font of the application is Segoe UI which is the same as that of the original Microsoft teams Appplication.
 
 * <b>Choosing A Video Call SDK 
-![Jitsi vs WebRTC](https://res.cloudinary.com/pooja-gera/image/upload/v1626081180/engage2021-readme_assets/MSTeamsClone_VideoCallSDKComparison_jeuwsu.png)
+
+  ![Jitsi vs WebRTC](https://res.cloudinary.com/pooja-gera/image/upload/v1626081180/engage2021-readme_assets/MSTeamsClone_VideoCallSDKComparison_jeuwsu.png)
 
 * Choosing A Hosting Platform</b> 
-![Firebase vs Heroku](https://res.cloudinary.com/pooja-gera/image/upload/v1626081222/engage2021-readme_assets/MSTeamsClone_HostingPlatformComparison_qe4bhs.png)
+
+  ![Firebase vs Heroku](https://res.cloudinary.com/pooja-gera/image/upload/v1626081222/engage2021-readme_assets/MSTeamsClone_HostingPlatformComparison_qe4bhs.png)
 
 [(Back to top)](#table-of-contents)
 
@@ -153,21 +157,32 @@ This disciplined process upon MS Teams Clone development gave me the following b
 I used Trello as my primary application for designing the board for the development process of MS Teams Clone Web Application. 
 
 * <b>Using Trello for managing sprints</b>
+
 ![Trello Sprint Board](https://res.cloudinary.com/pooja-gera/image/upload/v1626083386/engage2021-readme_assets/MSTeamsClone_SprintBoardTrello_xkqjmd.png)
+
 <br>
 I divided my entire development process into <b>4 sprints (each having the duration of 1 week)</b> as shown in the images below. I gave due importance to the bug review and fixing part of the development process as it is crucial to offer whatever features you are offering are offered with utmost perfection. 
 <br>
+
 ![Sprint 1](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_Sprint1_dkajyp.png)
+
 <br>
+
 ![Sprint 2](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_Sprint2_plyvkj.png)
+
 <br>
+
 ![Sprint 3](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_Sprint3_alr2mm.png)
+
 <br>
+
 ![Sprint 4](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_Sprint4_k1oin4.png)
+
 <br>
 * <b>Adjusting AceHacker/Mentor Assigned Assignments</b>
 To cater to the assignments provided by the AceHacker platform and also undertake the tasks and suggestions provided by the mentors, I made a separate card where I put these assignments and made sure I was completing them alongside my ongoing sprints. 
 <br>
+
 ![Assignments](https://res.cloudinary.com/pooja-gera/image/upload/v1626083385/engage2021-readme_assets/MSTeamsClone_SprintAssignments_upjwsz.png)
 
 
